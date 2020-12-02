@@ -15,6 +15,13 @@
 		CF8619532575D3DA00C0A7B3 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619522575D3DA00C0A7B3 /* FavoritesListVC.swift */; };
 		CF8619572575F2FC00C0A7B3 /* JBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619562575F2FC00C0A7B3 /* JBButton.swift */; };
 		CF86195A257602CA00C0A7B3 /* JBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF861959257602CA00C0A7B3 /* JBTextField.swift */; };
+		CF86195F25769AB300C0A7B3 /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86195E25769AB300C0A7B3 /* FollowersVC.swift */; };
+		CF8619622577FD7A00C0A7B3 /* JBTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619612577FD7A00C0A7B3 /* JBTitleLabel.swift */; };
+		CF8619652577FECC00C0A7B3 /* JBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619642577FECC00C0A7B3 /* JBBodyLabel.swift */; };
+		CF8619682577FF8D00C0A7B3 /* JBAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619672577FF8D00C0A7B3 /* JBAlertVC.swift */; };
+		CF86196B25780D5A00C0A7B3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86196A25780D5A00C0A7B3 /* UIViewController+Ext.swift */; };
+		CF86197425783A3000C0A7B3 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86197325783A3000C0A7B3 /* Follower.swift */; };
+		CF86197825783AAF00C0A7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86197725783AAF00C0A7B3 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		CF8619522575D3DA00C0A7B3 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		CF8619562575F2FC00C0A7B3 /* JBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBButton.swift; sourceTree = "<group>"; };
 		CF861959257602CA00C0A7B3 /* JBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBTextField.swift; sourceTree = "<group>"; };
+		CF86195E25769AB300C0A7B3 /* FollowersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
+		CF8619612577FD7A00C0A7B3 /* JBTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBTitleLabel.swift; sourceTree = "<group>"; };
+		CF8619642577FECC00C0A7B3 /* JBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBBodyLabel.swift; sourceTree = "<group>"; };
+		CF8619672577FF8D00C0A7B3 /* JBAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBAlertVC.swift; sourceTree = "<group>"; };
+		CF86196A25780D5A00C0A7B3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CF86197325783A3000C0A7B3 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		CF86197725783AAF00C0A7B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +74,64 @@
 		CF8619362575CE3B00C0A7B3 /* Followers */ = {
 			isa = PBXGroup;
 			children = (
-				CF8619372575CE3B00C0A7B3 /* AppDelegate.swift */,
-				CF8619392575CE3B00C0A7B3 /* SceneDelegate.swift */,
-				CF8619562575F2FC00C0A7B3 /* JBButton.swift */,
-				CF861959257602CA00C0A7B3 /* JBTextField.swift */,
-				CF86194F2575D3A300C0A7B3 /* SearchVC.swift */,
-				CF8619522575D3DA00C0A7B3 /* FavoritesListVC.swift */,
-				CF8619402575CE3D00C0A7B3 /* Assets.xcassets */,
-				CF8619422575CE3D00C0A7B3 /* LaunchScreen.storyboard */,
+				CF86197225783A2300C0A7B3 /* Model */,
+				CF8619712578204000C0A7B3 /* Support */,
+				CF8619702578123F00C0A7B3 /* Extensions */,
+				CF86196F2578121D00C0A7B3 /* Custom Views */,
+				CF86196E257811E900C0A7B3 /* Screens */,
 				CF8619452575CE3D00C0A7B3 /* Info.plist */,
 			);
 			path = Followers;
+			sourceTree = "<group>";
+		};
+		CF86196E257811E900C0A7B3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CF86195E25769AB300C0A7B3 /* FollowersVC.swift */,
+				CF86194F2575D3A300C0A7B3 /* SearchVC.swift */,
+				CF8619522575D3DA00C0A7B3 /* FavoritesListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CF86196F2578121D00C0A7B3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF8619562575F2FC00C0A7B3 /* JBButton.swift */,
+				CF8619612577FD7A00C0A7B3 /* JBTitleLabel.swift */,
+				CF8619642577FECC00C0A7B3 /* JBBodyLabel.swift */,
+				CF861959257602CA00C0A7B3 /* JBTextField.swift */,
+				CF8619672577FF8D00C0A7B3 /* JBAlertVC.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		CF8619702578123F00C0A7B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF86196A25780D5A00C0A7B3 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF8619712578204000C0A7B3 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CF8619372575CE3B00C0A7B3 /* AppDelegate.swift */,
+				CF8619392575CE3B00C0A7B3 /* SceneDelegate.swift */,
+				CF8619402575CE3D00C0A7B3 /* Assets.xcassets */,
+				CF8619422575CE3D00C0A7B3 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CF86197225783A2300C0A7B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF86197325783A3000C0A7B3 /* Follower.swift */,
+				CF86197725783AAF00C0A7B3 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF86197825783AAF00C0A7B3 /* User.swift in Sources */,
+				CF8619682577FF8D00C0A7B3 /* JBAlertVC.swift in Sources */,
 				CF8619532575D3DA00C0A7B3 /* FavoritesListVC.swift in Sources */,
 				CF8619502575D3A300C0A7B3 /* SearchVC.swift in Sources */,
+				CF86196B25780D5A00C0A7B3 /* UIViewController+Ext.swift in Sources */,
+				CF86195F25769AB300C0A7B3 /* FollowersVC.swift in Sources */,
+				CF8619652577FECC00C0A7B3 /* JBBodyLabel.swift in Sources */,
+				CF8619622577FD7A00C0A7B3 /* JBTitleLabel.swift in Sources */,
+				CF86197425783A3000C0A7B3 /* Follower.swift in Sources */,
 				CF8619572575F2FC00C0A7B3 /* JBButton.swift in Sources */,
 				CF8619382575CE3B00C0A7B3 /* AppDelegate.swift in Sources */,
 				CF86193A2575CE3B00C0A7B3 /* SceneDelegate.swift in Sources */,
