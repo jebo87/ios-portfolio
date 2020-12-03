@@ -112,8 +112,8 @@
 				CFDA8ED525788DC00095F53E /* JBAvatarImageView.swift */,
 				CF8619612577FD7A00C0A7B3 /* JBTitleLabel.swift */,
 				CF8619642577FECC00C0A7B3 /* JBBodyLabel.swift */,
-				CF861959257602CA00C0A7B3 /* JBTextField.swift */,
 				CF8619672577FF8D00C0A7B3 /* JBAlertVC.swift */,
+				CF861959257602CA00C0A7B3 /* JBTextField.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
