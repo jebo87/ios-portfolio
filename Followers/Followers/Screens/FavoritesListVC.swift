@@ -8,12 +8,17 @@
 import UIKit
 
 class FavoritesListVC: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .systemBlue
        
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
