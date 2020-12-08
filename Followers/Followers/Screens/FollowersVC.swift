@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerVCDelegate: class {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowersVC: UIViewController {
     
     enum Section {
@@ -19,6 +23,15 @@ class FollowersVC: UIViewController {
     var page = 1
     var hasMoreFollowers = true
     var isSearching = false
+    
+    init(username: String){
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -76,13 +89,12 @@ class FollowersVC: UIViewController {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
-                
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them 🥺"
                     DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
                     return
                 }
-                self.updateData(on: followers)
+                self.updateData(on: self.followers)
                 
             case .failure(let error):
                 self.presentJBAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "OK")
@@ -124,8 +136,8 @@ extension FollowersVC: UICollectionViewDelegate {
         let activeArray = isSearching ? filteredFollowers : followers
         let follower = activeArray[indexPath.item]
         
-        let destVC = UserInfoVC()
-        destVC.username = follower.login
+        let destVC = UserInfoVC(username: follower.login)
+        destVC.delegate = self
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true)
     }
@@ -146,3 +158,48 @@ extension FollowersVC: UISearchResultsUpdating, UISearchBarDelegate {
         updateData(on: followers)
      }
 }
+
+extension FollowersVC: FollowerVCDelegate {
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        title = username
+        page = 1
+//        hasMoreFollowers = true  Reset this.
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        getFollowers(username: username, page: page)
+        
+    }
+    
+    
+}
+
+
+#if DEBUG
+//This is to enable previews.
+import SwiftUI
+
+struct FollowersVCPreview: PreviewProvider {
+    
+    static var previews: some View {
+        VCContainerView().edgesIgnoringSafeArea(.all)
+            
+            
+    }
+    
+    struct VCContainerView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return FollowersVC(username: "angelabauer")
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+    
+    
+}
+#endif

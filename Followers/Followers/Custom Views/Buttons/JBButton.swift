@@ -33,4 +33,8 @@ class JBButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false //use autolayout
     }
     
+    func set(backgroundColor: UIColor, title: String){
+        self.backgroundColor = backgroundColor
+        self.setTitle(title, for: .normal)
+    }
 }

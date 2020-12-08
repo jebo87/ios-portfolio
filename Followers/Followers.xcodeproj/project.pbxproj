@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF12D9DA257F258600969747 /* Date+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12D9D9257F258600969747 /* Date+EXT.swift */; };
+		CF12D9DD257F25A700969747 /* String+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12D9DC257F25A700969747 /* String+EXT.swift */; };
 		CF40B06B2579CC300085C884 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40B06A2579CC300085C884 /* UIHelper.swift */; };
 		CF40B074257C09740085C884 /* JBEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40B073257C09740085C884 /* JBEmptyStateView.swift */; };
 		CF40B078257C16050085C884 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40B077257C16050085C884 /* UserInfoVC.swift */; };
+		CF40B07C257DB3080085C884 /* JBUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40B07B257DB3080085C884 /* JBUserInfoHeaderVC.swift */; };
+		CF40B07F257DB5790085C884 /* JBSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40B07E257DB5790085C884 /* JBSecondaryTitleLabel.swift */; };
+		CF6DCDEB257DC740005304E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DCDEA257DC740005304E2 /* Constants.swift */; };
+		CF6DCDEE257DD192005304E2 /* JBItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DCDED257DD192005304E2 /* JBItemInfoView.swift */; };
+		CF6DCDF1257EDA49005304E2 /* JBItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DCDF0257EDA49005304E2 /* JBItemInfoVC.swift */; };
+		CF6DCDF4257EDCD8005304E2 /* JBRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DCDF3257EDCD8005304E2 /* JBRepoItemVC.swift */; };
+		CF6DCDF7257EE164005304E2 /* JBFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DCDF6257EE164005304E2 /* JBFollowerItemVC.swift */; };
 		CF8619382575CE3B00C0A7B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619372575CE3B00C0A7B3 /* AppDelegate.swift */; };
 		CF86193A2575CE3B00C0A7B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8619392575CE3B00C0A7B3 /* SceneDelegate.swift */; };
 		CF8619412575CE3D00C0A7B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF8619402575CE3D00C0A7B3 /* Assets.xcassets */; };
@@ -32,9 +41,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF12D9D9257F258600969747 /* Date+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+EXT.swift"; sourceTree = "<group>"; };
+		CF12D9DC257F25A700969747 /* String+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EXT.swift"; sourceTree = "<group>"; };
 		CF40B06A2579CC300085C884 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		CF40B073257C09740085C884 /* JBEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBEmptyStateView.swift; sourceTree = "<group>"; };
 		CF40B077257C16050085C884 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		CF40B07B257DB3080085C884 /* JBUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		CF40B07E257DB5790085C884 /* JBSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		CF6DCDEA257DC740005304E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CF6DCDED257DD192005304E2 /* JBItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBItemInfoView.swift; sourceTree = "<group>"; };
+		CF6DCDF0257EDA49005304E2 /* JBItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBItemInfoVC.swift; sourceTree = "<group>"; };
+		CF6DCDF3257EDCD8005304E2 /* JBRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBRepoItemVC.swift; sourceTree = "<group>"; };
+		CF6DCDF6257EE164005304E2 /* JBFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBFollowerItemVC.swift; sourceTree = "<group>"; };
 		CF8619342575CE3B00C0A7B3 /* Followers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Followers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8619372575CE3B00C0A7B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF8619392575CE3B00C0A7B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CF40B073257C09740085C884 /* JBEmptyStateView.swift */,
+				CF6DCDED257DD192005304E2 /* JBItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,7 +123,9 @@
 		CF40B071257C091D0085C884 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF6DCDF9257EE1C9005304E2 /* ItemInfoVC */,
 				CF8619672577FF8D00C0A7B3 /* JBAlertVC.swift */,
+				CF40B07B257DB3080085C884 /* JBUserInfoHeaderVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,8 +135,19 @@
 			children = (
 				CF8619642577FECC00C0A7B3 /* JBBodyLabel.swift */,
 				CF8619612577FD7A00C0A7B3 /* JBTitleLabel.swift */,
+				CF40B07E257DB5790085C884 /* JBSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		CF6DCDF9257EE1C9005304E2 /* ItemInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				CF6DCDF0257EDA49005304E2 /* JBItemInfoVC.swift */,
+				CF6DCDF3257EDCD8005304E2 /* JBRepoItemVC.swift */,
+				CF6DCDF6257EE164005304E2 /* JBFollowerItemVC.swift */,
+			);
+			path = ItemInfoVC;
 			sourceTree = "<group>";
 		};
 		CF86192B2575CE3B00C0A7B3 = {
@@ -178,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				CF86196A25780D5A00C0A7B3 /* UIViewController+Ext.swift */,
+				CF12D9D9257F258600969747 /* Date+EXT.swift */,
+				CF12D9DC257F25A700969747 /* String+EXT.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +249,7 @@
 			children = (
 				CFDA8ECE257886A20095F53E /* ErrorMessage.swift */,
 				CF40B06A2579CC300085C884 /* UIHelper.swift */,
+				CF6DCDEA257DC740005304E2 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -297,21 +332,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF86197825783AAF00C0A7B3 /* User.swift in Sources */,
+				CF40B07C257DB3080085C884 /* JBUserInfoHeaderVC.swift in Sources */,
 				CF8619682577FF8D00C0A7B3 /* JBAlertVC.swift in Sources */,
 				CF8619532575D3DA00C0A7B3 /* FavoritesListVC.swift in Sources */,
 				CF8619502575D3A300C0A7B3 /* SearchVC.swift in Sources */,
 				CF86196B25780D5A00C0A7B3 /* UIViewController+Ext.swift in Sources */,
+				CF6DCDEB257DC740005304E2 /* Constants.swift in Sources */,
+				CF6DCDF7257EE164005304E2 /* JBFollowerItemVC.swift in Sources */,
 				CF40B06B2579CC300085C884 /* UIHelper.swift in Sources */,
 				CF86195F25769AB300C0A7B3 /* FollowersVC.swift in Sources */,
+				CF12D9DD257F25A700969747 /* String+EXT.swift in Sources */,
+				CF6DCDEE257DD192005304E2 /* JBItemInfoView.swift in Sources */,
 				CF8619652577FECC00C0A7B3 /* JBBodyLabel.swift in Sources */,
 				CF40B074257C09740085C884 /* JBEmptyStateView.swift in Sources */,
 				CFDA8ED325788D420095F53E /* FollowerCell.swift in Sources */,
+				CF6DCDF4257EDCD8005304E2 /* JBRepoItemVC.swift in Sources */,
 				CFDA8ED625788DC00095F53E /* JBAvatarImageView.swift in Sources */,
 				CFDA8ECF257886A20095F53E /* ErrorMessage.swift in Sources */,
 				CF8619622577FD7A00C0A7B3 /* JBTitleLabel.swift in Sources */,
 				CF86197425783A3000C0A7B3 /* Follower.swift in Sources */,
 				CF8619572575F2FC00C0A7B3 /* JBButton.swift in Sources */,
+				CF40B07F257DB5790085C884 /* JBSecondaryTitleLabel.swift in Sources */,
 				CFDA8ECA25783E480095F53E /* NetworkManager.swift in Sources */,
+				CF6DCDF1257EDA49005304E2 /* JBItemInfoVC.swift in Sources */,
+				CF12D9DA257F258600969747 /* Date+EXT.swift in Sources */,
 				CF8619382575CE3B00C0A7B3 /* AppDelegate.swift in Sources */,
 				CF86193A2575CE3B00C0A7B3 /* SceneDelegate.swift in Sources */,
 				CF86195A257602CA00C0A7B3 /* JBTextField.swift in Sources */,

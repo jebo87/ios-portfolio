@@ -22,3 +22,31 @@ class FavoritesListVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
+
+#if DEBUG
+//This is to enable previews.
+import SwiftUI
+
+struct FavoritesListVCPreview: PreviewProvider {
+    
+    static var previews: some View {
+        VCContainerView().edgesIgnoringSafeArea(.all)
+            
+            
+    }
+    
+    struct VCContainerView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return FavoritesListVC()
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+    
+    
+}
+#endif

@@ -21,4 +21,7 @@ struct UIHelper {
         return flowLayout
         
     }
+    
+    static let user = User(login: "jebo87", avatarUrl: "https://avatars2.githubusercontent.com/u/7273200?v=4", name: "Jorge Bautista", location: "Montreal", bio: "Developer, Serial Entrepreneur", publicRepos: 2, publicGists: 2, htmlUrl: "https://github.com/jebo87", following: 2, followers: 5, createdAt: "2014-04-12T14:09:17Z")
+    
 }

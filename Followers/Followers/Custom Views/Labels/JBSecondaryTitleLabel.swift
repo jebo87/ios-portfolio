@@ -1,13 +1,13 @@
 //
-//  JBBodyLabel.swift
+//  JBSecondaryTitleLabel.swift
 //  Followers
 //
-//  Created by Jorge Enrique Bautista Ocampo on 2020-12-02.
+//  Created by Jorge Enrique Bautista Ocampo on 2020-12-06.
 //
 
 import UIKit
 
-class JBBodyLabel: UILabel {
+class JBSecondaryTitleLabel: UILabel {
 
     
     override init(frame: CGRect) {
@@ -19,19 +19,19 @@ class JBBodyLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(textAlignment: NSTextAlignment){
+    init(fontSize: CGFloat){
         super.init(frame: .zero)
-        self.textAlignment = textAlignment
+        font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         configure()
     }
     
     private func configure(){
         textColor = .secondaryLabel
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.75
-        lineBreakMode = .byWordWrapping
+        minimumScaleFactor = 0.90
+        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
-        font = UIFont.preferredFont(forTextStyle: .body)
+        
     }
 
 }

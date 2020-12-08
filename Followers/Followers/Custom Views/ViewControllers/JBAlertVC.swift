@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class JBAlertVC: UIViewController {
     
     let containerView = UIView()
@@ -101,3 +100,32 @@ class JBAlertVC: UIViewController {
     
     
 }
+
+#if DEBUG
+//This is to enable previews.
+import SwiftUI
+
+struct VCPreview: PreviewProvider {
+    
+    static var previews: some View {
+        VCContainerView().edgesIgnoringSafeArea(.all)
+            .previewLayout(.sizeThatFits)
+            
+    }
+    
+    struct VCContainerView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return JBAlertVC(title: "Title Text", message: "This is an example message", buttonTitle: "OK")
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+    
+    
+}
+#endif
+

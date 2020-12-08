@@ -41,9 +41,8 @@ class SearchVC: UIViewController {
             presentJBAlertOnMainThread(title: "Empty username", message: "Please enter a username, we need to know who to look for 😃", buttonTitle: "OK")
             return
         }
-        let followerListVC = FollowersVC()
-        followerListVC.username = usernameTextField.text
-        followerListVC.title = usernameTextField.text
+        let followerListVC = FollowersVC(username: usernameTextField.text ?? "")
+        
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
@@ -92,3 +91,31 @@ extension SearchVC: UITextFieldDelegate {
         return true
     }
 }
+
+#if DEBUG
+//This is to enable previews.
+import SwiftUI
+
+struct SearchVCPreview: PreviewProvider {
+    
+    static var previews: some View {
+        VCContainerView().edgesIgnoringSafeArea(.all)
+            
+            
+    }
+    
+    struct VCContainerView: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return SearchVC()
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+    
+    
+}
+#endif
