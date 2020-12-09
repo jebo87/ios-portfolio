@@ -27,6 +27,7 @@ class FollowersVC: UIViewController {
     init(username: String){
         super.init(nibName: nil, bundle: nil)
         self.username = username
+        title = username
     }
     
     required init?(coder: NSCoder) {
@@ -44,12 +45,12 @@ class FollowersVC: UIViewController {
         configureSearchController()
         getFollowers(username: username, page: 1)
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
         
     }
     
@@ -57,6 +58,8 @@ class FollowersVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
         
     }
     
@@ -108,6 +111,32 @@ class FollowersVC: UIViewController {
             cell.set(follower: follower)
             return cell
         })
+    }
+    
+    @objc func addButtonTapped(){
+        showLoadingView()
+        
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] (result) in
+            guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
+            switch result{
+            case .success(let user):
+                let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                PersistenceManager.updateWith(favorite: follower, actionType: .add) { [weak self] (error) in
+                    guard let self = self else { return }
+                    guard let error = error else {
+                        self.presentJBAlertOnMainThread(title: "Success", message: "You have successfully added this user to your favorites 🎉", buttonTitle: "Ok")
+                        return
+                    }
+                    
+                    self.presentJBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                }
+            case .failure(let error):
+                self.presentJBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
     
     func updateData(on followers: [Follower]){
@@ -164,7 +193,7 @@ extension FollowersVC: FollowerVCDelegate {
         self.username = username
         title = username
         page = 1
-//        hasMoreFollowers = true  Reset this.
+        hasMoreFollowers = true  
         followers.removeAll()
         filteredFollowers.removeAll()
         collectionView.setContentOffset(.zero, animated: true)

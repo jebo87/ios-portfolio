@@ -12,4 +12,6 @@ enum JBError: String, Error {
     case unableToComplete = "Unable to complete your request. Please check your connection"
     case invalidResponse = "Invalid response from the server, please try again"
     case invalidData = "Data received from the server was invalid. Please try again"
+    case unableToFavorite = "There was an error retrieving the user favorites. Please try again"
+    case alreadyInFavorites = "This favorite already exists"
 }
