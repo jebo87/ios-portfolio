@@ -36,6 +36,9 @@
 		CF86197825783AAF00C0A7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86197725783AAF00C0A7B3 /* User.swift */; };
 		CFB7490725807B6D00B016D2 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB7490625807B6D00B016D2 /* PersistenceManager.swift */; };
 		CFB7490A258084E700B016D2 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB74909258084E700B016D2 /* FavoriteCell.swift */; };
+		CFB7490F2581BEA400B016D2 /* JBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB7490E2581BEA400B016D2 /* JBTabBarController.swift */; };
+		CFB749122581D47200B016D2 /* UIView+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB749112581D47200B016D2 /* UIView+EXT.swift */; };
+		CFB749152581E02D00B016D2 /* UITableView+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB749142581E02D00B016D2 /* UITableView+EXT.swift */; };
 		CFDA8ECA25783E480095F53E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA8EC925783E480095F53E /* NetworkManager.swift */; };
 		CFDA8ECF257886A20095F53E /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA8ECE257886A20095F53E /* ErrorMessage.swift */; };
 		CFDA8ED325788D420095F53E /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA8ED225788D420095F53E /* FollowerCell.swift */; };
@@ -74,6 +77,9 @@
 		CF86197725783AAF00C0A7B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CFB7490625807B6D00B016D2 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		CFB74909258084E700B016D2 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		CFB7490E2581BEA400B016D2 /* JBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBTabBarController.swift; sourceTree = "<group>"; };
+		CFB749112581D47200B016D2 /* UIView+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EXT.swift"; sourceTree = "<group>"; };
+		CFB749142581E02D00B016D2 /* UITableView+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EXT.swift"; sourceTree = "<group>"; };
 		CFDA8EC925783E480095F53E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CFDA8ECE257886A20095F53E /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		CFDA8ED225788D420095F53E /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		CF86196F2578121D00C0A7B3 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFB7490D2581BE8600B016D2 /* TabBarControllers */,
 				CF40B072257C09250085C884 /* Labels */,
 				CF40B071257C091D0085C884 /* ViewControllers */,
 				CF40B070257C090B0085C884 /* ImageViews */,
@@ -216,6 +223,8 @@
 				CF86196A25780D5A00C0A7B3 /* UIViewController+Ext.swift */,
 				CF12D9D9257F258600969747 /* Date+EXT.swift */,
 				CF12D9DC257F25A700969747 /* String+EXT.swift */,
+				CFB749112581D47200B016D2 /* UIView+EXT.swift */,
+				CFB749142581E02D00B016D2 /* UITableView+EXT.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +247,14 @@
 				CF86197725783AAF00C0A7B3 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CFB7490D2581BE8600B016D2 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFB7490E2581BEA400B016D2 /* JBTabBarController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 		CFDA8EC825783E3D0095F53E /* Managers */ = {
@@ -338,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF86197825783AAF00C0A7B3 /* User.swift in Sources */,
+				CFB749152581E02D00B016D2 /* UITableView+EXT.swift in Sources */,
 				CF40B07C257DB3080085C884 /* JBUserInfoHeaderVC.swift in Sources */,
 				CF8619682577FF8D00C0A7B3 /* JBAlertVC.swift in Sources */,
 				CF8619532575D3DA00C0A7B3 /* FavoritesListVC.swift in Sources */,
@@ -347,11 +365,13 @@
 				CF6DCDF7257EE164005304E2 /* JBFollowerItemVC.swift in Sources */,
 				CF40B06B2579CC300085C884 /* UIHelper.swift in Sources */,
 				CF86195F25769AB300C0A7B3 /* FollowersVC.swift in Sources */,
+				CFB749122581D47200B016D2 /* UIView+EXT.swift in Sources */,
 				CF12D9DD257F25A700969747 /* String+EXT.swift in Sources */,
 				CF6DCDEE257DD192005304E2 /* JBItemInfoView.swift in Sources */,
 				CF8619652577FECC00C0A7B3 /* JBBodyLabel.swift in Sources */,
 				CF40B074257C09740085C884 /* JBEmptyStateView.swift in Sources */,
 				CFB7490A258084E700B016D2 /* FavoriteCell.swift in Sources */,
+				CFB7490F2581BEA400B016D2 /* JBTabBarController.swift in Sources */,
 				CFDA8ED325788D420095F53E /* FollowerCell.swift in Sources */,
 				CF6DCDF4257EDCD8005304E2 /* JBRepoItemVC.swift in Sources */,
 				CFDA8ED625788DC00095F53E /* JBAvatarImageView.swift in Sources */,

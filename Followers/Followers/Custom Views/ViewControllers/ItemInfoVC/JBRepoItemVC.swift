@@ -6,9 +6,13 @@
 //
 
 import UIKit
-
+protocol JBRepoItemVCDelegate: class {
+    func didTapGitHubProfile(for user: User)    
+}
 class JBRepoItemVC: JBItemInfoVC {
 
+    weak var delegate: JBRepoItemVCDelegate! //all delegates should be weak
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()

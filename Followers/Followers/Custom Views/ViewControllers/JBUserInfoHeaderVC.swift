@@ -35,23 +35,21 @@ class JBUserInfoHeaderVC: UIViewController {
     }
     
     func configureUIElements(){
-        avatarJBView.downloadImage(from: user.avatarUrl)
+        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] (image) in
+            guard let self = self else { return }
+            DispatchQueue.main.async { self.avatarJBView.image = image }
+        }
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No Location"
         bioLabel.text = user.bio ?? "No bio available"
         bioLabel.numberOfLines = 3
-        locationImageView.image = UIImage(systemName: SFSymbols.location)
+        locationImageView.image = Images.locationImage
         locationImageView.tintColor = .secondaryLabel
     }
     
     func addSubviews(){
-        view.addSubview(avatarJBView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(bioLabel)
+        view.addSubviews(avatarJBView, usernameLabel, nameLabel, locationLabel, locationImageView, bioLabel)
     }
     
     func layoutUI(){
@@ -87,7 +85,7 @@ class JBUserInfoHeaderVC: UIViewController {
             bioLabel.topAnchor.constraint(equalTo: avatarJBView.bottomAnchor, constant: textImagePadding),
             bioLabel.leadingAnchor.constraint(equalTo: avatarJBView.leadingAnchor),
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bioLabel.heightAnchor.constraint(equalToConstant: 60)
+            bioLabel.heightAnchor.constraint(equalToConstant: 90)
         ])
         
     }

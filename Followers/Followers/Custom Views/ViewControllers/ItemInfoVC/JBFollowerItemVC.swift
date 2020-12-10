@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+protocol JBFollowerItemVCDelegate: class {
+    func didTapGetFollowers(for user: User)
+}
 class JBFollowerItemVC: JBItemInfoVC {
    
+    weak var delegate: JBFollowerItemVCDelegate! //all delegates should be weak
 
         override func viewDidLoad() {
             super.viewDidLoad()

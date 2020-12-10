@@ -15,7 +15,7 @@ class JBItemInfoVC: UIViewController {
     let actionButton = JBButton()
     
     var user: User!
-    weak var delegate: UserInfoVCDelegate! //all delegates should be weak
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,7 @@ class JBItemInfoVC: UIViewController {
     @objc func actionButtonTapped(){} //to be overrided by children
     
     private func layoutUI(){
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
+        view.addSubviews(stackView,actionButton)       
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat = 20
