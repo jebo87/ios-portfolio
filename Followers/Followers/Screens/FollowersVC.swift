@@ -40,13 +40,9 @@ class FollowersVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        
-        
         configureDataSource()
         configureSearchController()
         getFollowers(username: username, page: 1)
-        print("view did load")
-        
     }
     
    
@@ -54,13 +50,15 @@ class FollowersVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                        target: self,
+                                        action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
         
     }
     
     func configureCollectionView(){
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
+        collectionView = UICollectionView(frame: view.bounds,                                          collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
@@ -77,6 +75,15 @@ class FollowersVC: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
+    func configureDataSource(){
+        dataSource = UICollectionViewDiffableDataSource<Section,Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            cell.set(follower: follower)
+            return cell
+        })
+    }
+    
+    
     func getFollowers(username: String, page: Int){
         showLoadingView()
         isLoadingMoreFollowers = true
@@ -85,14 +92,7 @@ class FollowersVC: UIViewController {
             self.dismissLoadingView()
             switch result {
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                if self.followers.isEmpty {
-                    let message = "This user doesn't have any followers. Go follow them 🥺"
-                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-                    return
-                }
-                self.updateData(on: self.followers)
+                self.updateUI(with: followers)
                 
             case .failure(let error):
                 self.presentJBAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "OK")
@@ -101,13 +101,18 @@ class FollowersVC: UIViewController {
         }
     }
     
-    func configureDataSource(){
-        dataSource = UICollectionViewDiffableDataSource<Section,Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
-            cell.set(follower: follower)
-            return cell
-        })
+    
+    func updateUI(with followers: [Follower]){
+        if followers.count < 100 { self.hasMoreFollowers = false }
+        self.followers.append(contentsOf: followers)
+        if self.followers.isEmpty {
+            let message = "This user doesn't have any followers. Go follow them 🥺"
+            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+            return
+        }
+        self.updateData(on: self.followers)
     }
+    
     
     @objc func addButtonTapped(){
         showLoadingView()
@@ -119,16 +124,8 @@ class FollowersVC: UIViewController {
             
             switch result{
             case .success(let user):
-                let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
-                PersistenceManager.updateWith(favorite: follower, actionType: .add) { [weak self] (error) in
-                    guard let self = self else { return }
-                    guard let error = error else {
-                        self.presentJBAlertOnMainThread(title: "Success", message: "You have successfully added this user to your favorites 🎉", buttonTitle: "Ok")
-                        return
-                    }
-                    
-                    self.presentJBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-                }
+                self.addUserToFavorites(user: user)
+                
             case .failure(let error):
                 self.presentJBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -144,7 +141,21 @@ class FollowersVC: UIViewController {
         }
     }
     
+    func addUserToFavorites(user: User){
+        let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
+        PersistenceManager.updateWith(favorite: follower, actionType: .add) { [weak self] (error) in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.presentJBAlertOnMainThread(title: "Success", message: "You have successfully added this user to your favorites 🎉", buttonTitle: "Ok")
+                return
+            }
+            
+            self.presentJBAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+        }
+    }
+    
 }
+
 
 extension FollowersVC: UICollectionViewDelegate {
    

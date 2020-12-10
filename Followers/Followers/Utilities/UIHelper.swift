@@ -7,7 +7,8 @@
 
 import UIKit
 enum UIHelper {
-    static func createThreeColumnFlowLayout(in view: UIView) -> UICollectionViewLayout {
+    
+    static func createThreeColumnFlowLayout(in view: UIView) -> UICollectionViewLayout {        
         let width = view.bounds.width
         let padding : CGFloat = 12
         let minimumItemSpacing: CGFloat = 10
@@ -19,9 +20,20 @@ enum UIHelper {
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
         
         return flowLayout
-        
     }
     
-    static let user = User(login: "jebo87", avatarUrl: "https://avatars2.githubusercontent.com/u/7273200?v=4", name: "Jorge Bautista", location: "Montreal", bio: "Developer, Serial Entrepreneur", publicRepos: 2, publicGists: 2, htmlUrl: "https://github.com/jebo87", following: 2, followers: 5, createdAt: "2014-04-12T14:09:17Z")
+    static let user = User(
+        login: "jebo87",
+        avatarUrl: "https://avatars2.githubusercontent.com/u/7273200?v=4",
+        name: "Jorge Bautista",
+        location: "Montreal",
+        bio: "Developer, Serial Entrepreneur",
+        publicRepos: 2,
+        publicGists: 2,
+        htmlUrl: "https://github.com/jebo87",
+        following: 2,
+        followers: 5,
+        createdAt: "2014-04-12T14:09:17Z"
+    )
     
 }

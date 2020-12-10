@@ -37,12 +37,7 @@ class JBTextField: UITextField {
         autocorrectionType = .no
         returnKeyType = .go
         clearButtonMode = .whileEditing
-        placeholder = "Enter a username"
-        
-        
-        
-        
-        
+        placeholder = "Enter a username"  
     }
     
 }
